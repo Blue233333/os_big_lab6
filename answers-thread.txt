@@ -1,0 +1,1 @@
+两个线程同时进入put，且此时key对应的bucket是同一个，即key_1%NBUCKET=key_2%NBUCKET，并且key_1和key_2当前都不在该bucket中，key_1≠key_2。这时两个线程如果同时进入insert函数，则会由于在table[i]链表头部同时插入元素导致其中一个元素被忽略
